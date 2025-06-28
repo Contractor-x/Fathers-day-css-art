@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Father's Day CSS Heart for Dad</title>
   <style>
+    html, body {
+      height: 100%;
+    }
     body {
       background: #f0f4f8;
       display: flex;
@@ -11,49 +14,72 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      box-sizing: border-box;
     }
 
     .heart {
       position: relative;
-      width: 200px;
-      height: 180px;
-      background: red;
-      margin-top: 50px;
+      width: 240px;
+      height: 220px;
       transform: rotate(-45deg);
+      margin-top: 0;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      background: red;
+      border-radius: 40% 40% 60% 60% / 45% 45% 55% 55%;
+      overflow: visible;
     }
 
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 200px;
-      height: 180px;
+      width: 240px;
+      height: 220px;
       background: red;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -100px;
+      top: -120px;
       left: 0;
     }
 
     .heart::after {
-      left: 100px;
+      left: 120px;
       top: 0;
     }
 
     .text {
       position: absolute;
-      top: 60px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%) rotate(45deg);
-      font-family: 'Arial Black', sans-serif;
-      font-size: 2rem;
+      width: 80%;
+      text-align: center;
+      transform: translate(-50%, -50%) rotate(45deg);
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 2.4rem;
       color: white;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.25), 0 1px 0 #e00;
       user-select: none;
       pointer-events: none;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+
+    @media (max-width: 480px) {
+      .heart, .heart::before, .heart::after {
+        width: 160px;
+        height: 140px;
+      }
+      .heart::before {
+        top: -80px;
+      }
+      .heart::after {
+        left: 80px;
+      }
+      .text {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
