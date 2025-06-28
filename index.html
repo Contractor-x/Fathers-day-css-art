@@ -2,8 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Father's Day Heart - CSS Art</title>
+  <title>Father's Day CSS Heart for Dad</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .heart {
+      position: relative;
+      width: 200px;
+      height: 180px;
+      background: red;
+      margin-top: 50px;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 180px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 100px;
+      top: 0;
+    }
+
+    .text {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      font-family: 'Arial Black', sans-serif;
+      font-size: 2rem;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
   <div class="heart">
