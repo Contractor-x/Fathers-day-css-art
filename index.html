@@ -2,80 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Father's Day Heart Art</title>
-  <!-- Add a fancy Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Father's Day CSS Art - DAD Heart</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: #f0f4f8;
-    }
     body {
-      height: 100vh;
+      background: #e8edf1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
+
     .heart {
       position: relative;
-      width: 240px;
-      height: 220px;
+      width: 150px;
+      height: 150px;
+      background: #ff3b3b;
       transform: rotate(-45deg);
-      background: #e53935;
-      border-radius: 40% 40% 60% 60% / 45% 45% 55% 55%;
-      box-shadow: 0 0 30px rgba(0,0,0,0.2);
-      margin-bottom: 40px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      animation: pulse 1.5s infinite;
     }
+
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 240px;
-      height: 220px;
-      background: #e53935;
+      width: 150px;
+      height: 150px;
+      background: #ff3b3b;
       border-radius: 50%;
     }
+
     .heart::before {
-      top: -120px;
+      top: -75px;
       left: 0;
     }
+
     .heart::after {
-      left: 120px;
+      left: 75px;
       top: 0;
     }
-    .dad-text {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
-      color: #b71c1c;
-      letter-spacing: 0.08em;
-      text-shadow: 1px 1px 6px rgba(0,0,0,0.10), 0 1px 0 #fff;
-      margin-top: 0;
-      margin-bottom: 0;
-      text-align: center;
-      user-select: none;
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      color: white;
+      font-weight: bold;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
-    @media (max-width: 480px) {
-      .heart, .heart::before, .heart::after {
-        width: 140px;
-        height: 120px;
-      }
-      .heart::before {
-        top: -60px;
-      }
-      .heart::after {
-        left: 70px;
-      }
-      .dad-text {
-        font-size: 1.5rem;
-      }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
     }
   </style>
 </head>
 <body>
-  <div class="heart"></div>
-  <div class="dad-text">DAD</div>
+  <div class="heart">
+    <div class="text">DAD</div>
+  </div>
 </body>
 </html>
