@@ -4,19 +4,17 @@
   <meta charset="UTF-8">
   <title>Father's Day CSS Heart for Dad</title>
   <style>
-    html, body {
-      height: 100%;
-    }
+    html, body { height: 100%; }
     body {
       background: #f0f4f8;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
       box-sizing: border-box;
     }
-
     .heart {
       position: relative;
       width: 240px;
@@ -27,10 +25,9 @@
       background: red;
       border-radius: 40% 40% 60% 60% / 45% 45% 55% 55%;
       overflow: visible;
+      transition: transform 0.2s;
     }
-
-    .heart::before,
-    .heart::after {
+    .heart::before, .heart::after {
       content: "";
       position: absolute;
       width: 240px;
@@ -38,17 +35,8 @@
       background: red;
       border-radius: 50%;
     }
-
-    .heart::before {
-      top: -120px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: 120px;
-      top: 0;
-    }
-
+    .heart::before { top: -120px; left: 0; }
+    .heart::after { left: 120px; top: 0; }
     .text {
       position: absolute;
       top: 50%;
@@ -65,27 +53,62 @@
       letter-spacing: 0.1em;
       line-height: 1;
     }
-
     @media (max-width: 480px) {
-      .heart, .heart::before, .heart::after {
-        width: 160px;
-        height: 140px;
-      }
-      .heart::before {
-        top: -80px;
-      }
-      .heart::after {
-        left: 80px;
-      }
-      .text {
-        font-size: 1.4rem;
-      }
+      .heart, .heart::before, .heart::after { width: 160px; height: 140px; }
+      .heart::before { top: -80px; }
+      .heart::after { left: 80px; }
+      .text { font-size: 1.4rem; }
+    }
+    .message {
+      margin-top: 30px;
+      font-size: 1.4rem;
+      color: #333;
+      display: none;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 24px;
+      font-size: 1.1rem;
+      border: none;
+      background: #e53935;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(100,0,0,.2);
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #b71c1c;
     }
   </style>
 </head>
 <body>
-  <div class="heart">
+  <div class="heart" id="heart">
     <div class="text">DAD</div>
   </div>
+  <button onclick="showMessage()">Show Father's Day Message</button>
+  <div class="message" id="msg">Happy Father's Day! You are the heart of our family. 💖</div>
+  <script>
+    // Heart beating animation
+    const heart = document.getElementById('heart');
+    let scale = 1, growing = true;
+    setInterval(() => {
+      if (growing) {
+        scale += 0.008;
+        if (scale > 1.08) growing = false;
+      } else {
+        scale -= 0.008;
+        if (scale < 0.97) growing = true;
+      }
+      heart.style.transform = `rotate(-45deg) scale(${scale})`;
+    }, 25);
+
+    // Show message
+    function showMessage() {
+      document.getElementById('msg').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
