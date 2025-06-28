@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Father's Day CSS Art - DAD Heart</title>
+  <title>Father's Day CSS Art - Heart for Dad</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
     body {
       background: #e8edf1;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -22,6 +25,7 @@
       transform: rotate(-45deg);
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
       animation: pulse 1.5s infinite;
+      margin-bottom: 30px;
     }
 
     .heart::before,
@@ -44,15 +48,12 @@
       top: 0;
     }
 
-    .text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      color: white;
-      font-weight: bold;
-      font-size: 1.8rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    .fancy-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: #333;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      letter-spacing: 2px;
     }
 
     @keyframes pulse {
@@ -63,8 +64,7 @@
   </style>
 </head>
 <body>
-  <div class="heart">
-    <div class="text">DAD</div>
-  </div>
+  <div class="heart"></div>
+  <div class="fancy-text">DAD</div>
 </body>
 </html>
