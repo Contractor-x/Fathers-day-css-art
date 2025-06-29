@@ -1,2 +1,2 @@
 # Fathers-day-css-art
-a simple demonstration of the CSS art developed in celebration for the fathers day event.
+A Simple Demonstration Of The CSS Art Developed In Celebration For The Fathers Day.
