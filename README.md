@@ -1,5 +1,5 @@
 # Fathers-Day-CSS-Art
  
 ---
-## What this art is 
+## What this art is a
 A Simple Demonstration Of The CSS Art Developed In Celebration For The Fathers Day.
